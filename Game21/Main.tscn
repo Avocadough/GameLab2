@@ -1,0 +1,247 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_main"]
+[ext_resource type="Texture2D" path="res://art/chamber.svg" id="2_chamber"]
+[ext_resource type="PackedScene" path="res://Wall.tscn" id="3_wall"]
+[ext_resource type="PackedScene" path="res://Ball.tscn" id="4_ball"]
+[ext_resource type="Texture2D" path="res://art/crystal_amber.svg" id="5_amber"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button"]
+bg_color = Color(0.15, 0.74, 0.78, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_left = 8
+corner_radius_bottom_right = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
+bg_color = Color(0.35, 0.9, 0.91, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_left = 8
+corner_radius_bottom_right = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
+bg_color = Color(0.13, 0.6, 0.65, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_left = 8
+corner_radius_bottom_right = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_focus"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85, 0.98, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_left = 8
+corner_radius_bottom_right = 8
+
+[sub_resource type="Theme" id="Theme_interface"]
+default_font_size = 16
+Label/colors/font_color = Color(0.72, 0.8, 0.86, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="Chamber" type="Sprite2D" parent="."]
+texture = ExtResource("2_chamber")
+centered = false
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Floor" parent="Walls" instance=ExtResource("3_wall")]
+position = Vector2(480, 576)
+size = Vector2(880, 20)
+
+[node name="Ceiling" parent="Walls" instance=ExtResource("3_wall")]
+position = Vector2(480, 154)
+size = Vector2(880, 14)
+accent = Color(0.21, 0.36, 0.43, 1)
+
+[node name="LeftBoundary" parent="Walls" instance=ExtResource("3_wall")]
+position = Vector2(40, 365)
+rotation = 1.570796
+size = Vector2(436, 14)
+accent = Color(0.21, 0.36, 0.43, 1)
+
+[node name="RightBoundary" parent="Walls" instance=ExtResource("3_wall")]
+position = Vector2(920, 365)
+rotation = -1.570796
+size = Vector2(436, 14)
+accent = Color(0.21, 0.36, 0.43, 1)
+
+[node name="LeftRamp" parent="Walls" instance=ExtResource("3_wall")]
+position = Vector2(229, 307)
+rotation = 0.18
+size = Vector2(304, 20)
+
+[node name="RightRamp" parent="Walls" instance=ExtResource("3_wall")]
+position = Vector2(730, 324)
+rotation = -0.18
+size = Vector2(304, 20)
+
+[node name="CenterRamp" parent="Walls" instance=ExtResource("3_wall")]
+position = Vector2(480, 437)
+rotation = 0.1
+size = Vector2(240, 20)
+accent = Color(1, 0.73, 0.34, 1)
+
+[node name="LowerRamp" parent="Walls" instance=ExtResource("3_wall")]
+position = Vector2(203, 492)
+rotation = -0.08
+size = Vector2(162, 18)
+
+[node name="Crystals" type="Node2D" parent="."]
+
+[node name="Cyan01" parent="Crystals" instance=ExtResource("4_ball")]
+position = Vector2(142, 211)
+rotation = -0.18
+linear_velocity = Vector2(24, 0)
+
+[node name="Cyan02" parent="Crystals" instance=ExtResource("4_ball")]
+position = Vector2(252, 216)
+rotation = 0.12
+linear_velocity = Vector2(15, 0)
+
+[node name="Cyan03" parent="Crystals" instance=ExtResource("4_ball")]
+position = Vector2(365, 195)
+rotation = 0.36
+linear_velocity = Vector2(10, 0)
+
+[node name="Cyan04" parent="Crystals" instance=ExtResource("4_ball")]
+position = Vector2(584, 201)
+rotation = -0.28
+linear_velocity = Vector2(-18, 0)
+
+[node name="Cyan05" parent="Crystals" instance=ExtResource("4_ball")]
+position = Vector2(706, 211)
+rotation = 0.32
+linear_velocity = Vector2(-20, 0)
+
+[node name="Cyan06" parent="Crystals" instance=ExtResource("4_ball")]
+position = Vector2(820, 215)
+rotation = -0.08
+linear_velocity = Vector2(-16, 0)
+
+[node name="Amber01" parent="Crystals" instance=ExtResource("4_ball")]
+position = Vector2(445, 215)
+rotation = 0.16
+gravity_scale = 1.35
+linear_velocity = Vector2(24, 0)
+
+[node name="Sprite2D" parent="Crystals/Amber01" index="0"]
+texture = ExtResource("5_amber")
+
+[node name="Amber02" parent="Crystals" instance=ExtResource("4_ball")]
+position = Vector2(519, 255)
+rotation = -0.3
+gravity_scale = 1.35
+linear_velocity = Vector2(-18, 0)
+
+[node name="Sprite2D" parent="Crystals/Amber02" index="0"]
+texture = ExtResource("5_amber")
+
+[node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="Controls" type="Control" parent="Interface"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_interface")
+
+[node name="Eyebrow" type="Label" parent="Interface/Controls"]
+offset_left = 42.0
+offset_top = 20.0
+offset_right = 500.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.33, 0.83, 0.86, 1)
+theme_override_font_sizes/font_size = 12
+text = "GAME21  /  MISSION 01"
+
+[node name="Title" type="Label" parent="Interface/Controls"]
+offset_left = 40.0
+offset_top = 39.0
+offset_right = 470.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.92, 0.97, 1, 1)
+theme_override_font_sizes/font_size = 38
+text = "CRYSTAL DROP"
+
+[node name="Subtitle" type="Label" parent="Interface/Controls"]
+offset_left = 43.0
+offset_top = 87.0
+offset_right = 570.0
+offset_bottom = 111.0
+theme_override_font_sizes/font_size = 14
+text = "Eight crystals. Shared scenes. Different gravity."
+
+[node name="Reset" type="Button" parent="Interface/Controls"]
+offset_left = 758.0
+offset_top = 42.0
+offset_right = 918.0
+offset_bottom = 89.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.02, 0.12, 0.16, 1)
+theme_override_colors/font_hover_color = Color(0.02, 0.12, 0.16, 1)
+theme_override_colors/font_pressed_color = Color(0.02, 0.12, 0.16, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
+theme_override_styles/focus = SubResource("StyleBoxFlat_focus")
+text = "DROP AGAIN"
+
+[node name="CyanPhysics" type="Label" parent="Interface/Controls"]
+offset_left = 43.0
+offset_top = 119.0
+offset_right = 310.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.39, 0.87, 0.93, 1)
+theme_override_font_sizes/font_size = 13
+text = "CYAN   gravity 0.72x"
+
+[node name="AmberPhysics" type="Label" parent="Interface/Controls"]
+offset_left = 254.0
+offset_top = 119.0
+offset_right = 520.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(1, 0.75, 0.4, 1)
+theme_override_font_sizes/font_size = 13
+text = "AMBER   gravity 1.35x"
+
+[node name="BouncePhysics" type="Label" parent="Interface/Controls"]
+offset_left = 706.0
+offset_top = 119.0
+offset_right = 918.0
+offset_bottom = 143.0
+theme_override_font_sizes/font_size = 13
+text = "BOUNCE 0.78  /  FRICTION 0.15"
+horizontal_alignment = 2
+
+[node name="Footer" type="Label" parent="Interface/Controls"]
+offset_left = 77.0
+offset_top = 597.0
+offset_right = 700.0
+offset_bottom = 623.0
+theme_override_font_sizes/font_size = 13
+text = "SCENE INSTANCING     8 CRYSTALS  /  8 WALLS"
+
+[node name="Ready" type="Label" parent="Interface/Controls"]
+offset_left = 770.0
+offset_top = 597.0
+offset_right = 885.0
+offset_bottom = 623.0
+theme_override_font_sizes/font_size = 12
+text = "PHYSICS LAB"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="Interface/Controls/Reset" to="." method="_on_reset_pressed"]
+
+[editable path="Crystals/Amber01"]
+[editable path="Crystals/Amber02"]

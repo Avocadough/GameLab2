@@ -1,0 +1,5 @@
+**/.godot/
+*.tmp
+*.log
+Thumbs.db
+Desktop.ini

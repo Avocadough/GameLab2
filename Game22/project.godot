@@ -1,0 +1,46 @@
+; Godot 4 project. Exercise 2, Mission 2.
+config_version=5
+
+[application]
+config/name="Game22"
+run/main_scene="res://Main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://art/player_walk_1.svg"
+
+[display]
+window/size/viewport_width=480
+window/size/viewport_height=720
+window/size/window_width_override=600
+window/size/window_height_override=900
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+environment/defaults/default_clear_color=Color(0.027, 0.075, 0.133, 1)
+
+[audio]
+driver/enable_input=false
+
+[input]
+move_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194319), Object(InputEventKey,"physical_keycode":65)]
+}
+move_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194321), Object(InputEventKey,"physical_keycode":68)]
+}
+move_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194320), Object(InputEventKey,"physical_keycode":87)]
+}
+move_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194322), Object(InputEventKey,"physical_keycode":83)]
+}
+start_game={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194309)]
+}
