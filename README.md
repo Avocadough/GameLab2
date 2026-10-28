@@ -1,4 +1,11 @@
-# GameLab2 — Crystal Drop & Star Courier
+<div align="center">
+  <h1>GameLab2 — Crystal Drop &amp; Star Courier</h1>
+  <p>Two Godot exercises in 2D physics and arcade survival.</p>
+  <p>
+    <img src="https://img.shields.io/badge/Godot-4.7.1-478CBF" alt="Godot 4.7.1">
+  </p>
+  <p><a href="https://avocadough.github.io/GameLab2/game21.html">Play Game21</a> &nbsp;·&nbsp; <a href="https://avocadough.github.io/GameLab2/game22.html">Play Game22</a></p>
+</div>
 
 Two Godot 4.7.1 exercises exploring scene instancing, 2D physics and an arcade survival game for Computer Game Development Exercise 2.
 
