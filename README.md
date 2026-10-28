@@ -1,4 +1,27 @@
-# แบบฝึกหัดที่ 2 — Your First 2D Game
+# GameLab2 — Crystal Drop & Star Courier
+
+Two Godot 4.7.1 exercises exploring scene instancing, 2D physics and an arcade survival game for Computer Game Development Exercise 2.
+
+| Project | Browser demo | Gameplay video |
+| --- | --- | --- |
+| **Game21: Crystal Drop** — falling crystals with different physics settings | [Play Game21](https://avocadough.github.io/GameLab2/game21.html) | [Watch Game21](https://avocadough.github.io/GameLab2/videos/game21.mp4) |
+| **Game22: Star Courier** — dodge aliens and survive as long as possible | [Play Game22](https://avocadough.github.io/GameLab2/game22.html) | [Watch Game22](https://avocadough.github.io/GameLab2/videos/game22.mp4) |
+
+![Crystal Drop preview](docs/images/game21.png)
+
+## Open locally
+
+Import [Game21/project.godot](Game21/project.godot) or [Game22/project.godot](Game22/project.godot) in Godot 4.7.1 and run its `Main.tscn`. Game22 uses a keyboard; its Web export requires a browser with WebGL 2 support.
+
+- [Game21/](Game21/) — crystal and wall scenes with physics settings.
+- [Game22/](Game22/) — player, mob, HUD and main scenes.
+- [docs/](docs/) — Web exports, the submission landing page and videos.
+
+The original exercise details, student identification, references and media credits are retained below.
+
+---
+
+## รายละเอียดแบบฝึกหัด (ภาษาไทย)
 
 ภูริณัฐ ศรีไตรรัตน์ · 663380531-2
 
